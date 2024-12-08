@@ -220,6 +220,17 @@ class Image(QtWidgets.QWidget):
         if event.button() == Qt.LeftButton and self.region_start is not None:
             # Store the ending point of the region
             self.region_end = event.pos()
+
+            # Allow region selection in any direction
+            if self.region_start.x() > self.region_end.x():
+                temp_x = self.region_start.x()
+                self.region_start.setX(self.region_end.x())
+                self.region_end.setX(temp_x)
+            if self.region_start.y() > self.region_end.y():
+                temp_y = self.region_start.y()
+                self.region_start.setY(self.region_end.y())
+                self.region_end.setY(temp_y)
+
             # Calculate the width and height of the region
             self.region_width = abs(self.region_end.x() - self.region_start.x())
             self.region_height = abs(self.region_end.y() - self.region_start.y())
