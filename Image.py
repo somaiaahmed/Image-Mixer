@@ -62,12 +62,14 @@ class Image(QtWidgets.QWidget):
                 self.calculated = [False, False, False, False]
                 # Update display using cv2 image
                 self.update_display(cv_image)
+                
                 # Update self.image after loading the first image
                 self.image = cv_image
                 self.width, self.height = new_width, new_height
                 # Adjust sizes after updating the display
                 self.adjust_sizes()
-                
+                for i in range(4):
+                    self.check_combo(i)
                 
 
 
@@ -172,7 +174,7 @@ class Image(QtWidgets.QWidget):
             self.update_ft_display(selected_component, index)
     
     def update_ft_display(self, cv_image, index):
-        if cv_image is not None:
+        if cv_image is not None and self.ft_image_label:
             # Convert the NumPy array to QPixmap
             q_image = QImage(cv_image.data.tobytes(), cv_image.shape[1], cv_image.shape[0], QImage.Format_Grayscale8)
             pixmap_item = QGraphicsPixmapItem(QPixmap.fromImage(q_image))
