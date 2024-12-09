@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1440</width>
+    <width>1472</width>
     <height>977</height>
    </rect>
   </property>
@@ -14,8 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-QMainWindow {
+   <string notr="true">QMainWindow {
     background-color:#2d3843;
 }
 QPushButton, QToolButton, QCommandLinkButton{
@@ -27,7 +26,7 @@ QPushButton, QToolButton, QCommandLinkButton{
     border-left-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
     border-width: 2px;
     border-radius: 8px;
-    color: #616161;
+    color: white;
     font-weight: bold;
     background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #fbfdfd, stop:0.5 #ffffff, stop:1 #fbfdfd);
 }
@@ -140,7 +139,7 @@ QProgressBar::chunk:disabled {
 }
 QSlider::groove {
     border: 1px solid #bbbbbb;
-    background-color: #52595d;
+    background-color: #303239;
     border-radius: 4px;
 }
 QSlider::groove:horizontal {
@@ -182,52 +181,10 @@ QSlider::add-page:vertical {
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #467dd1, stop:0.5 #3b88fc, stop:1 #467dd1);
 }
 QSlider::sub-page:vertical {
-    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #ddd5d5, stop:0.5 #dad3d3, stop:1 #ddd5d5);
+    background: #303239;
 }
 QSlider::add-page:horizontal:disabled, QSlider::sub-page:horizontal:disabled, QSlider::add-page:vertical:disabled, QSlider::sub-page:vertical:disabled {
-    background: #b9b9b9;
-}
-QComboBox, QFontComboBox {
-    border-width: 2px;
-    border-radius: 8px;
-    border-style: solid;
-    border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
-    border-right-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
-    border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #c1c9cf, stop:1 #d2d8dd);
-    border-left-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
-    background-color: #f4f4f4;
-    color: #272727;
-    padding-left: 5px;
-}
-QComboBox:editable, QComboBox:!editable, QComboBox::drop-down:editable, QComboBox:!editable:on, QComboBox::drop-down:editable:on {
-    background: #ffff;
-}
-QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    width: 15px;
-    color: #272727;
-    border-left-width: 1px;
-    border-left-color: darkgray;
-    border-left-style: solid;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-}
-QComboBox::down-arrow {
-    image: url(/usr/share/icons/Adwaita/16x16/actions/go-down-symbolic.symbolic.png); /*Adawaita icon thene*/
-}
-
-QComboBox::down-arrow:on {
-    top: 1px;
-    left: 1px;
-}
-QComboBox QAbstractItemView {
-    border: 1px solid darkgray;
-    border-radius: 8px;
-    selection-background-color: #dadada;
-    selection-color: #272727;
-    color: #272727;
-    background: white;
+    background: #303239;
 }
 QLabel, QCheckBox, QRadioButton {
     color: white;
@@ -251,7 +208,7 @@ QCheckBox:hover {
     border-color: transparent;
 }
 QCheckBox::indicator:checked {
-    image: url(/usr/share/icons/Adwaita/16x16/actions/object-select-symbolic.symbolic.png);
+    
     height: 15px;
     width: 15px;
     border-style:solid;
@@ -441,12 +398,12 @@ QScrollBar::left-arrow:horizontal {
 }
 QScrollBar::right-arrow:horizontal {
     image: url(/usr/share/icons/Adwaita/16x16/actions/go-next-symbolic.symbolic.png);
-}
-</string>
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(127, 127, 127);</string>
+    <string notr="true">background-color: #0F0E13
+;</string>
    </property>
    <layout class="QGridLayout" name="gridLayout_15">
     <item row="0" column="0">
@@ -489,7 +446,7 @@ QScrollBar::right-arrow:horizontal {
                   </property>
                  </widget>
                 </item>
-                <item row="0" column="1">
+                <item row="0" column="2">
                  <widget class="QComboBox" name="comboBox_11">
                   <property name="minimumSize">
                    <size>
@@ -502,6 +459,11 @@ QScrollBar::right-arrow:horizontal {
                     <width>16777215</width>
                     <height>25</height>
                    </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: #303239;
+color: white;
+</string>
                   </property>
                   <item>
                    <property name="text">
@@ -524,6 +486,19 @@ QScrollBar::right-arrow:horizontal {
                    </property>
                   </item>
                  </widget>
+                </item>
+                <item row="0" column="1">
+                 <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
                 </item>
                </layout>
               </widget>
@@ -559,7 +534,7 @@ QGroupBox::title {
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>450</width>
+                      <width>250</width>
                       <height>300</height>
                      </size>
                     </property>
@@ -570,10 +545,13 @@ QGroupBox::title {
                      <enum>QFrame::Sunken</enum>
                     </property>
                     <property name="text">
-                     <string/>
+                     <string>double click to import</string>
                     </property>
                     <property name="scaledContents">
                      <bool>true</bool>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -602,7 +580,11 @@ QGroupBox::title {
                   <item row="0" column="0">
                    <layout class="QHBoxLayout" name="horizontalLayout_7">
                     <item>
-                     <widget class="QGraphicsView" name="ft_comp_2"/>
+                     <widget class="QGraphicsView" name="ft_comp_2">
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                     </widget>
                     </item>
                     <item>
                      <widget class="QSlider" name="verticalSlider_3">
@@ -652,7 +634,7 @@ QGroupBox::title {
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QGridLayout" name="gridLayout_32">
-                <item row="0" column="1">
+                <item row="0" column="2">
                  <widget class="QComboBox" name="comboBox_10">
                   <property name="minimumSize">
                    <size>
@@ -665,6 +647,11 @@ QGroupBox::title {
                     <width>16777215</width>
                     <height>25</height>
                    </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: #303239;
+color: white;
+</string>
                   </property>
                   <item>
                    <property name="text">
@@ -695,6 +682,19 @@ QGroupBox::title {
                   </property>
                  </widget>
                 </item>
+                <item row="0" column="1">
+                 <spacer name="horizontalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
                </layout>
               </widget>
              </item>
@@ -723,13 +723,13 @@ QGroupBox::title {
                    <widget class="QLabel" name="image4">
                     <property name="minimumSize">
                      <size>
-                      <width>400</width>
+                      <width>250</width>
                       <height>0</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>450</width>
+                      <width>250</width>
                       <height>300</height>
                      </size>
                     </property>
@@ -740,10 +740,13 @@ QGroupBox::title {
                      <enum>QFrame::Sunken</enum>
                     </property>
                     <property name="text">
-                     <string/>
+                     <string>double click to import</string>
                     </property>
                     <property name="scaledContents">
                      <bool>true</bool>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -822,7 +825,14 @@ QGroupBox::title {
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QGridLayout" name="gridLayout_24">
-                <item row="0" column="1">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_22">
+                  <property name="text">
+                   <string>Image 3</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
                  <widget class="QComboBox" name="comboBox_8">
                   <property name="minimumSize">
                    <size>
@@ -835,6 +845,11 @@ QGroupBox::title {
                     <width>16777215</width>
                     <height>25</height>
                    </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: #303239;
+color: white;
+</string>
                   </property>
                   <item>
                    <property name="text">
@@ -858,12 +873,18 @@ QGroupBox::title {
                   </item>
                  </widget>
                 </item>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="label_22">
-                  <property name="text">
-                   <string>Image 3</string>
+                <item row="0" column="1">
+                 <spacer name="horizontalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
                   </property>
-                 </widget>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
                 </item>
                </layout>
               </widget>
@@ -893,13 +914,13 @@ QGroupBox::title {
                    <widget class="QLabel" name="image3">
                     <property name="minimumSize">
                      <size>
-                      <width>400</width>
+                      <width>250</width>
                       <height>0</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>450</width>
+                      <width>250</width>
                       <height>300</height>
                      </size>
                     </property>
@@ -910,10 +931,13 @@ QGroupBox::title {
                      <enum>QFrame::Sunken</enum>
                     </property>
                     <property name="text">
-                     <string/>
+                     <string>double click to import </string>
                     </property>
                     <property name="scaledContents">
                      <bool>true</bool>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -1013,6 +1037,11 @@ QGroupBox::title {
                     <height>25</height>
                    </size>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: #303239;
+color: white;
+</string>
+                  </property>
                   <item>
                    <property name="text">
                     <string>Magnitude</string>
@@ -1034,6 +1063,19 @@ QGroupBox::title {
                    </property>
                   </item>
                  </widget>
+                </item>
+                <item row="0" column="1">
+                 <spacer name="horizontalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
                 </item>
                </layout>
               </widget>
@@ -1080,10 +1122,13 @@ QGroupBox::title {
                      <enum>QFrame::Sunken</enum>
                     </property>
                     <property name="text">
-                     <string/>
+                     <string>double click to import</string>
                     </property>
                     <property name="scaledContents">
                      <bool>true</bool>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -1297,6 +1342,10 @@ QGroupBox::title {
                 <height>30</height>
                </size>
               </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(31, 87, 231);
+border-color: rgb(0, 0, 127);</string>
+              </property>
               <property name="text">
                <string>Apply</string>
               </property>
@@ -1341,6 +1390,11 @@ QGroupBox::title {
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #303239;
+color: white;
+</string>
+              </property>
               <item>
                <property name="text">
                 <string>Output 1</string>
@@ -1383,6 +1437,10 @@ QGroupBox::title {
                    <height>30</height>
                   </size>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(31, 87, 231);
+border-color: rgb(0, 0, 127);</string>
+                 </property>
                  <property name="text">
                   <string>Region Mixer</string>
                  </property>
@@ -1406,7 +1464,7 @@ QGroupBox::title {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1440</width>
+     <width>1472</width>
      <height>17</height>
     </rect>
    </property>
