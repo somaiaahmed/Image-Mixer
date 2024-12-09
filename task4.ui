@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1116</width>
-    <height>716</height>
+    <width>1440</width>
+    <height>977</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -992,7 +992,14 @@ QGroupBox::title {
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QGridLayout" name="gridLayout">
-                <item row="0" column="2">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_3">
+                  <property name="text">
+                   <string>Image 1</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="3">
                  <widget class="QComboBox" name="comboBox">
                   <property name="minimumSize">
                    <size>
@@ -1026,20 +1033,6 @@ QGroupBox::title {
                     <string>Imaginary</string>
                    </property>
                   </item>
-                 </widget>
-                </item>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="label_3">
-                  <property name="text">
-                   <string>Image 1</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1">
-                 <widget class="QCheckBox" name="outer_checkbox_1">
-                  <property name="text">
-                   <string>Outer</string>
-                  </property>
                  </widget>
                 </item>
                </layout>
@@ -1201,22 +1194,6 @@ QGroupBox::title {
                 <string/>
                </property>
                <layout class="QGridLayout" name="gridLayout_5">
-                <item row="0" column="0">
-                 <widget class="QGraphicsView" name="output1">
-                  <property name="minimumSize">
-                   <size>
-                    <width>250</width>
-                    <height>300</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>250</width>
-                    <height>400</height>
-                   </size>
-                  </property>
-                 </widget>
-                </item>
                 <item row="1" column="0">
                  <layout class="QGridLayout" name="gridLayout_8">
                   <item row="0" column="0">
@@ -1259,6 +1236,22 @@ QGroupBox::title {
                   </item>
                  </layout>
                 </item>
+                <item row="0" column="0">
+                 <widget class="QGraphicsView" name="output1">
+                  <property name="minimumSize">
+                   <size>
+                    <width>250</width>
+                    <height>300</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>250</width>
+                    <height>400</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
                </layout>
               </widget>
              </item>
@@ -1290,6 +1283,25 @@ QGroupBox::title {
             <string/>
            </property>
            <layout class="QGridLayout" name="gridLayout_4">
+            <item row="3" column="0">
+             <widget class="QPushButton" name="apply_btn">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Apply</string>
+              </property>
+             </widget>
+            </item>
             <item row="1" column="0">
              <widget class="QGroupBox" name="groupBox_9">
               <property name="title">
@@ -1316,25 +1328,6 @@ QGroupBox::title {
                    </item>
                   </layout>
                  </item>
-                 <item>
-                  <widget class="QPushButton" name="apply_btn">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="text">
-                    <string>Apply</string>
-                   </property>
-                  </widget>
-                 </item>
                 </layout>
                </item>
               </layout>
@@ -1360,23 +1353,42 @@ QGroupBox::title {
               </item>
              </widget>
             </item>
-            <item row="2" column="0">
-             <widget class="QPushButton" name="region_btn">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>30</height>
-               </size>
+            <item row="4" column="0">
+             <widget class="QFrame" name="frame_2">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
               </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>30</height>
-               </size>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
               </property>
-              <property name="text">
-               <string>Region Mixer</string>
-              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <widget class="QCheckBox" name="outer_checkbox_1">
+                 <property name="text">
+                  <string>Outer</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="region_btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Region Mixer</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
            </layout>
@@ -1394,7 +1406,7 @@ QGroupBox::title {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1116</width>
+     <width>1440</width>
      <height>17</height>
     </rect>
    </property>

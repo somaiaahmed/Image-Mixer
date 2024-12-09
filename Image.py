@@ -275,38 +275,50 @@ class Image(QtWidgets.QWidget):
                 # Add the region_item to the scene
                 self.ft_image_label.scene().addItem(self.region_item)
 
-    def calculate_brightness_contrast(self, cv_image):
-            result=None
-            if cv_image is not None:
-                result = cv2.addWeighted(cv_image, self.contrast_coef, np.zeros_like(cv_image), 0, self.brightness_coef)
-                self.image = result
-            return result
+    def calculate_brightness_contrast(self, cv_image, contrast, brightness):
+        # Ensure valid ranges for brightness and contrast
+        contrast = max(0.5, min(contrast, 3.0))  # Contrast: 0.5 to 3.0
+        brightness = max(-100, min(brightness, 100))  # Brightness: -100 to 100
+
+        # Apply brightness and contrast adjustment
+        adjusted_image = cv2.addWeighted(cv_image, contrast, np.zeros_like(cv_image), 0, brightness)
+        print(f"Applied Contrast: {contrast}, Brightness: {brightness}")  # Debug log
+        return adjusted_image
 
     def mousePressEvent_origional(self, event):
         if event.button() == Qt.LeftButton:
             self.image_label.mousePressPosition = event.pos()
             if self.image is not None:
-                self.original_image = self.image.copy()
+                if not hasattr(self, 'original_image') or self.original_image is None:
+                    self.original_image = self.image.copy()  # Store the original only once
+                    print("Original image stored.")  # Debug log
         elif event.button() == Qt.MiddleButton:
-            # Reset to default brightness and contrast
+            # Reset to original image and default brightness and contrast
             self.delta_y = 0.0
             self.delta_x = 0.0
-            # Store a copy of the original image
+            if hasattr(self, 'original_image') and self.original_image is not None:
+                self.image = self.original_image.copy()
+                self.update_display(self.image)
+                print("Image reset to original.")  # Debug log
 
     def mouseMoveEvent_origional(self, event):
-        if event.buttons() == Qt.LeftButton and Qt.MiddleButton:
+        if event.buttons() == Qt.LeftButton:
             delta_x = event.pos().x() - self.image_label.mousePressPosition.x()
             delta_y = event.pos().y() - self.image_label.mousePressPosition.y()
-            # Check if the image has been modified; if yes, revert to the original
-            if self.image is not None and np.array_equal(self.image, self.original_image):
-                self.image = self.original_image.copy()
             self.delta_y = delta_y
             self.delta_x = delta_x
+            print(f"Mouse moved: delta_x={delta_x}, delta_y={delta_y}")  # Debug log
 
     def mouseReleaseEvent_origional(self, event):
         if event.button() == Qt.LeftButton:
-            result = None
-            self.contrast_coef = (-self.delta_y + 100) * 0.01
-            self.brightness_coef = self.delta_x * 0.01
-            result = self.calculate_brightness_contrast(self.image)
-            self.update_display(result)
+            if self.image is not None and hasattr(self, 'original_image') and self.original_image is not None:
+                # Calculate contrast and brightness coefficients
+                self.contrast_coef = (-self.delta_y + 100) * 0.01
+                self.brightness_coef = self.delta_x * 0.01
+                print(f"Calculated coefficients: contrast={self.contrast_coef}, brightness={self.brightness_coef}")  # Debug log
+
+                # Apply changes to the original image
+                result = self.calculate_brightness_contrast(self.original_image, self.contrast_coef, self.brightness_coef)
+                self.image = result  # Update current image
+                self.update_display(result)
+                print("Image updated with new brightness and contrast.")  # Debug log

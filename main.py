@@ -44,17 +44,17 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
         
-        # Connect double-click events to each QLabel using a loop
+        #  double-click events
         for label, image_instance in zip(image_graphs, self.images):
             label.mouseDoubleClickEvent = lambda event, instance=image_instance: self.double_click_event(event, instance)
-            # Connect mouse events for region selection for ft_image labels
+            # region selection for ft_image labels
             if isinstance(image_instance.ft_image_label, QtWidgets.QGraphicsView):
-                # Connect events for region movement
+                # region movement
                 image_instance.ft_image_label.mousePressEvent = lambda event, instance=image_instance: self.mouse_press_event_ft(event, instance)
                 image_instance.ft_image_label.mouseReleaseEvent = lambda event, instance=image_instance: self.mouse_release_event_ft(event, instance)
                 image_instance.setFocusPolicy(Qt.StrongFocus)
 
-                #connect event for brightnnes by clicking     
+                #brightnnes    
                 image_instance.image_label.mousePressEvent = lambda event, instance=image_instance: self.mousePressEvent_ig(event, instance)
                 image_instance.image_label.mouseMoveEvent = lambda event, instance=image_instance: self.mouseMoveEvent_ig(event, instance)
                 image_instance.image_label.mouseReleaseEvent = lambda event, instance=image_instance: self.mouseReleaseEvent_ig(event, instance)
