@@ -524,7 +524,7 @@ QGroupBox::title {
                   <string/>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_37">
-                  <item row="0" column="0">
+                  <item row="0" column="1">
                    <widget class="QLabel" name="image2">
                     <property name="minimumSize">
                      <size>
@@ -554,6 +554,19 @@ QGroupBox::title {
                      <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_7">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -586,14 +599,27 @@ QGroupBox::title {
                       </property>
                      </widget>
                     </item>
-                    <item>
-                     <widget class="QSlider" name="verticalSlider_3">
-                      <property name="orientation">
-                       <enum>Qt::Vertical</enum>
-                      </property>
-                     </widget>
-                    </item>
                    </layout>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QSlider" name="verticalSlider_3">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <spacer name="horizontalSpacer_8">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -719,7 +745,7 @@ QGroupBox::title {
                   <string/>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_33">
-                  <item row="0" column="0">
+                  <item row="0" column="1">
                    <widget class="QLabel" name="image4">
                     <property name="minimumSize">
                      <size>
@@ -750,6 +776,19 @@ QGroupBox::title {
                     </property>
                    </widget>
                   </item>
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_11">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
                  </layout>
                 </widget>
                </item>
@@ -777,14 +816,27 @@ QGroupBox::title {
                     <item>
                      <widget class="QGraphicsView" name="ft_comp_4"/>
                     </item>
-                    <item>
-                     <widget class="QSlider" name="verticalSlider_4">
-                      <property name="orientation">
-                       <enum>Qt::Vertical</enum>
-                      </property>
-                     </widget>
-                    </item>
                    </layout>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QSlider" name="verticalSlider_4">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <spacer name="horizontalSpacer_12">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -910,7 +962,7 @@ QGroupBox::title {
                   <string/>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_25">
-                  <item row="0" column="0">
+                  <item row="0" column="1">
                    <widget class="QLabel" name="image3">
                     <property name="minimumSize">
                      <size>
@@ -941,6 +993,19 @@ QGroupBox::title {
                     </property>
                    </widget>
                   </item>
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_9">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
                  </layout>
                 </widget>
                </item>
@@ -963,19 +1028,32 @@ QGroupBox::title {
                   <string/>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_3">
+                  <item row="0" column="2">
+                   <widget class="QSlider" name="verticalSlider_2">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                   </widget>
+                  </item>
                   <item row="0" column="0">
                    <layout class="QHBoxLayout" name="horizontalLayout_6">
                     <item>
                      <widget class="QGraphicsView" name="ft_comp_3"/>
                     </item>
-                    <item>
-                     <widget class="QSlider" name="verticalSlider_2">
-                      <property name="orientation">
-                       <enum>Qt::Vertical</enum>
-                      </property>
-                     </widget>
-                    </item>
                    </layout>
+                  </item>
+                  <item row="0" column="1">
+                   <spacer name="horizontalSpacer_10">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -1101,7 +1179,7 @@ QGroupBox::title {
                   <string/>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_2">
-                  <item row="0" column="0">
+                  <item row="0" column="1">
                    <widget class="QLabel" name="image1">
                     <property name="minimumSize">
                      <size>
@@ -1131,6 +1209,19 @@ QGroupBox::title {
                      <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_5">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -1172,14 +1263,27 @@ QGroupBox::title {
                       </property>
                      </widget>
                     </item>
-                    <item>
-                     <widget class="QSlider" name="verticalSlider">
-                      <property name="orientation">
-                       <enum>Qt::Vertical</enum>
-                      </property>
-                     </widget>
-                    </item>
                    </layout>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QSlider" name="verticalSlider">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <spacer name="horizontalSpacer_6">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                  </layout>
                 </widget>
@@ -1199,6 +1303,12 @@ QGroupBox::title {
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
        <widget class="QGroupBox" name="groupBox_7">
+        <property name="maximumSize">
+         <size>
+          <width>350</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">QGroupBox {
     border: none; /* or border: 0; */
@@ -1215,95 +1325,10 @@ QGroupBox::title {
         <property name="title">
          <string/>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
         <layout class="QGridLayout" name="gridLayout_9">
-         <item row="1" column="0">
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <layout class="QGridLayout" name="gridLayout_7">
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_4">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>Output 1</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <widget class="QGroupBox" name="groupBox_5">
-               <property name="title">
-                <string/>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_5">
-                <item row="1" column="0">
-                 <layout class="QGridLayout" name="gridLayout_8">
-                  <item row="0" column="0">
-                   <widget class="QLabel" name="label_5">
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>25</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>Output 2</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QGroupBox" name="groupBox_6">
-                    <property name="title">
-                     <string/>
-                    </property>
-                    <layout class="QGridLayout" name="gridLayout_6">
-                     <item row="0" column="0">
-                      <widget class="QGraphicsView" name="output2">
-                       <property name="minimumSize">
-                        <size>
-                         <width>250</width>
-                         <height>300</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>250</width>
-                         <height>400</height>
-                        </size>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item row="0" column="0">
-                 <widget class="QGraphicsView" name="output1">
-                  <property name="minimumSize">
-                   <size>
-                    <width>250</width>
-                    <height>300</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>250</width>
-                    <height>400</height>
-                   </size>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
          <item row="0" column="0">
           <widget class="QGroupBox" name="groupBox_8">
            <property name="sizePolicy">
@@ -1357,21 +1382,24 @@ border-color: rgb(0, 0, 127);</string>
                <string/>
               </property>
               <layout class="QGridLayout" name="gridLayout_12">
-               <item row="1" column="0">
+               <item row="0" column="0">
                 <layout class="QVBoxLayout" name="verticalLayout_10">
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_4">
                    <item>
-                    <widget class="QCheckBox" name="mag_phase_checkbox">
+                    <widget class="QRadioButton" name="mag_phase_checkbox">
                      <property name="text">
-                      <string>Mag/Phase</string>
+                      <string>Mag-Phase</string>
+                     </property>
+                     <property name="checked">
+                      <bool>true</bool>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="real_imag_checkbox">
+                    <widget class="QRadioButton" name="real_imag_checkbox">
                      <property name="text">
-                      <string>Real/Imag</string>
+                      <string>Real-Imag</string>
                      </property>
                     </widget>
                    </item>
@@ -1451,6 +1479,94 @@ border-color: rgb(0, 0, 127);</string>
             </item>
            </layout>
           </widget>
+         </item>
+         <item row="1" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <layout class="QGridLayout" name="gridLayout_7">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_4">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>25</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Output 1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QGroupBox" name="groupBox_5">
+               <property name="title">
+                <string/>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_5">
+                <item row="0" column="0">
+                 <widget class="QGraphicsView" name="output1">
+                  <property name="minimumSize">
+                   <size>
+                    <width>250</width>
+                    <height>300</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>250</width>
+                    <height>400</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="0">
+          <layout class="QGridLayout" name="gridLayout_8">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Output 2</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QGroupBox" name="groupBox_6">
+             <property name="title">
+              <string/>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="0" column="0">
+               <widget class="QGraphicsView" name="output2">
+                <property name="minimumSize">
+                 <size>
+                  <width>250</width>
+                  <height>300</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>250</width>
+                  <height>400</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </widget>
