@@ -57,9 +57,11 @@ class Image(QtWidgets.QWidget):
                 
                 new_height, new_width = cv_image.shape[:2]
                 if self.image is not None and (new_width, new_height) != (self.width, self.height):
-                    # Sizes are different, apply adjust_image_sizes function
+                    # Sizes are different
                     self.adjust_sizes()
-                self.calculated = [False, False, False, False]
+                for img_instance in Image.instances:
+                    # recalc for all images
+                    img_instance.calculated = [False, False, False, False]
                 # Update display using cv2 image
                 self.update_display(cv_image)
                 
