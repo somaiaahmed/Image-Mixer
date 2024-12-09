@@ -36,6 +36,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.comboBox_11.activated.connect(lambda: self.combo_activated(1))
         self.comboBox_8.activated.connect(lambda: self.combo_activated(2))
         self.comboBox_10.activated.connect(lambda: self.combo_activated(3))
+
+        for image_instance in self.images:
+            self.outer_checkbox_1.stateChanged.connect(
+                lambda state, instance=image_instance: instance.draw_outer_region()
+            )
+
         
         self.Mixer = MX(self)
         mode = 'nonregion'

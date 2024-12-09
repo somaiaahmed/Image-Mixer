@@ -4,6 +4,11 @@ from PyQt5.QtGui import QPixmap, QImage,QColor
 from PyQt5 import QtWidgets 
 from PyQt5.QtCore import Qt,QRectF
 import numpy as np
+from PyQt5.QtWidgets import QGraphicsRectItem, QGraphicsPathItem, QGraphicsScene, QCheckBox
+from PyQt5.QtCore import QRectF
+from PyQt5.QtGui import QColor, QPainterPath
+from PyQt5.QtCore import Qt
+
 import logging
 import cv2
 logging.basicConfig(filename="Image.log",level=logging.INFO , format='%(levelname)s: %(message)s')
@@ -69,9 +74,15 @@ class Image(QtWidgets.QWidget):
                 self.image = cv_image
                 self.width, self.height = new_width, new_height
                 # Adjust sizes after updating the display
-                self.adjust_sizes()
-                for i in range(4):
-                    self.check_combo(i)
+                # self.adjust_sizes()
+                # for i in range(4):
+                #     self.check_combo(i)
+                
+                for img_instance in Image.instances:
+                    img_instance.adjust_sizes()
+                    for i in range(4):
+                        img_instance.check_combo(i)
+
                 
 
 
@@ -105,9 +116,9 @@ class Image(QtWidgets.QWidget):
             # Ensure the dimensions do not exceed the maximum limits
             min_width = min(min_width, MAX_WIDTH)
             min_height = min(min_height, MAX_HEIGHT)
-
             # Resize images in all instances to the smallest size
             for image in valid_images:
+
                 # Resize the original image using cv2
                 resized_image = cv2.resize(image.image, (min_width, min_height))
                 # Update the original image display
@@ -163,7 +174,7 @@ class Image(QtWidgets.QWidget):
                 self.calculated[index] = True
          
     def check_combo(self, index):
-        self.adjust_sizes()
+        
         if not self.calculated[index]:
             # Convert uint8 array to float64 for more accuracy
             image_array_float = self.image.astype(np.float64)
@@ -277,6 +288,40 @@ class Image(QtWidgets.QWidget):
                 self.region_item.setBrush(QColor(255, 0, 0, 100))  # Red with 100 alpha (semi-transparent)
                 # Add the region_item to the scene
                 self.ft_image_label.scene().addItem(self.region_item)
+
+    def draw_outer_region(self):
+        print("reg start",self.region_start)
+        print("reg end",self.region_end)
+        if self.region_start is not None and self.region_end is not None:
+            
+            # Ensure the scene exists for ft_image_label
+            if self.ft_image_label.scene() is not None:
+                # Remove previous outer region item if it exists to avoid overlap
+                if hasattr(self, 'outer_region_item') and self.outer_region_item is not None:
+                    self.ft_image_label.scene().removeItem(self.outer_region_item)
+                    self.outer_region_item = None
+
+                # Check if the checkbox is checked
+                    print("Drawing outer region")  # Debug log
+                    # Get the dimensions of the entire scene
+                    scene_rect = self.ft_image_label.sceneRect()
+
+                    # Create a QPainterPath for the full scene
+                    full_path = QPainterPath()
+                    full_path.addRect(scene_rect)
+
+                    # Subtract the rectangle area from the full scene path
+                    rect_path = QPainterPath()
+                    rect_path.addRect(QRectF(self.region_start, self.region_end))
+                    full_path -= rect_path
+
+                    # Create a QGraphicsPathItem for the outer region
+                    self.outer_region_item = QGraphicsPathItem(full_path)
+                    self.outer_region_item.setBrush(QColor(0, 0, 0, 100))  # Black with 100 alpha (semi-transparent)
+                    self.outer_region_item.setPen(Qt.NoPen)  # No border for the outer region
+                    self.ft_image_label.scene().addItem(self.outer_region_item)
+
+
 
     def calculate_brightness_contrast(self, cv_image, contrast, brightness):
         # Ensure valid ranges for brightness and contrast
