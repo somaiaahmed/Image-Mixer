@@ -163,6 +163,7 @@ class Image(QtWidgets.QWidget):
                 self.calculated[index] = True
          
     def check_combo(self, index):
+        self.adjust_sizes()
         if not self.calculated[index]:
             # Convert uint8 array to float64 for more accuracy
             image_array_float = self.image.astype(np.float64)
@@ -322,5 +323,8 @@ class Image(QtWidgets.QWidget):
                 # Apply changes to the original image
                 result = self.calculate_brightness_contrast(self.original_image, self.contrast_coef, self.brightness_coef)
                 self.image = result  # Update current image
+                self.calculated = [False, False, False, False]
+                for i in range(4):
+                    self.check_combo(i)
                 self.update_display(result)
                 print("Image updated with new brightness and contrast.")  # Debug log
