@@ -6,6 +6,7 @@ The **FT Magnitude/Phase Mixer or Emphasizer** is a desktop application designed
 
 This application is equipped with an intuitive user interface for interactive experimentation and real-time feedback.
 
+![important scenario](<imgs/most important.jpg>)
 ---
 
 ## Features
@@ -31,12 +32,16 @@ This application is equipped with an intuitive user interface for interactive ex
   - Vertical drag: Brightness
   - Horizontal drag: Contrast
 
+  ![contrast](imgs/contrast.jpg)
+
 ---
 
 ## Components Mixer
 - **Customizable Weights**: Users can set weights for each image’s FT components (e.g., magnitude and phase or real and imaginary) using sliders.
 - **Real-Time Mixing**: The output image is generated via an inverse Fourier Transform (iFFT) of the weighted averages of the input image FTs.
-  - Adjustable weights for fine-tuning component contributions.
+- Adjustable weights for fine-tuning component contributions.
+
+![components](imgs/components.jpg)
   
 ---
 
@@ -47,12 +52,14 @@ This application is equipped with an intuitive user interface for interactive ex
 - **Customizable Region Size**: Adjust the rectangle size/percentage via sliders or resize handles.
 - **Unified Region Selection**: The region applies uniformly across all images for consistency.
 
+![Customizable Region Size](<imgs/Customizable Region Size.jpg>)
 ---
 
 ## Realtime Mixing
 - **Progress Bar**: Displayed during mixing operations to indicate progress.
 - **Thread Management**: Ensures responsiveness by canceling ongoing operations when new mixing settings are applied.
 
+![real time](<imgs/real time.jpg>)
 ---
 
 ## How to Use
