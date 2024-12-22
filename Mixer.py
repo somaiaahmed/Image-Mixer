@@ -68,39 +68,41 @@ class MyDialog(QtWidgets.QDialog):
 
     def mix_2(self, index, slid1, slid2, slid3, slid4, list_combo_box, mode): 
         self.sums = {
-                "Magnitude": [],
-                "Phase": [],
-                "Real": [],
-                "Imaginary": []
-            }
+            "Magnitude": [],
+            "Phase": [],
+            "Real": [],
+            "Imaginary": []
+        }
         newmag, newphase, newreal, newimag = 0, 0, 0, 0
-        # component = "Magnitude/Phase" if index == 0 else "Real/Imaginary"
 
+        # Extract values for each component
         value1, value2, value3, value4 = [], [], [], []
         values = [value1, value2, value3, value4]
         for i in range(4):
             component = list_combo_box[i]
-            print(self.main.images[i].instances)
             if self.main.images[i].ft_components:
                 values[i] = self.get_component(component, i, mode)
                 self.sums[component].append(values[i])
-        #print(values)
-        
 
         Mix_ratios = [slid1 / 100, slid2 / 100, slid3 / 100, slid4 / 100]
 
-        for i in range (4):
+        for i in range(4):
             if self.main.images[i].ft_components:
-                if list_combo_box[i] == 'Magnitude':  # Magnitude or Real
-                    newmag += Mix_ratios[i] * values[i]
-                if list_combo_box[i] == 'Phase': # Phase or Imaginary
+                if list_combo_box[i] == 'Magnitude':
+                    # Apply log scaling before mixing
+                    log_mag = np.log1p(values[i])
+                    newmag += Mix_ratios[i] * log_mag
+                elif list_combo_box[i] == 'Phase':
                     newphase += Mix_ratios[i] * values[i]
-                if list_combo_box[i] == 'Real': 
+                elif list_combo_box[i] == 'Real':
                     newreal += Mix_ratios[i] * values[i]
-                if list_combo_box[i] == 'Imaginary':
+                elif list_combo_box[i] == 'Imaginary':
                     newimag += Mix_ratios[i] * values[i]
+
         if index == 0:
-            new_mixed_ft = np.multiply(newmag, np.exp(1j * newphase))
+            # Convert log-scaled magnitude back to linear scale
+            final_mag = np.expm1(newmag)
+            new_mixed_ft = np.multiply(final_mag, np.exp(1j * newphase))
         else:
             new_mixed_ft = newreal + 1j * newimag
 
